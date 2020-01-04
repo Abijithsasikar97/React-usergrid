@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
+    background: #fff;
     margin: auto;
     text-align: center;
     p {
@@ -18,3 +19,6 @@ export const Container = styled.div`
     }
 `;
 
+export const BodyContainer = styled.div`
+    background: #0c4160;
+`;

@@ -12,7 +12,7 @@ export const Container = styled.div`
             width: 100%;
             height: 100px;
         }
-        .chessboard {
+        .griddiv {
             background-color: #ccc;
             width: 340px;
             height: 230px;

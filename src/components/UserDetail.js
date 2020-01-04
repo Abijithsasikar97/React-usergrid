@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import { Container } from './styles';
+import { Container, BodyContainer } from './styles';
 
 class UserDetail extends Component {
   constructor(props) {
@@ -8,7 +8,9 @@ class UserDetail extends Component {
 
     this.state = {
       userList: [],
-      Id: 6
+      Id: 2
+      //here am assigned Id I mean am hardcoded, using redux consumes more time.
+      //With redux we can store Id in store and use that state here in second api call.
     };
   }
 
@@ -26,13 +28,15 @@ class UserDetail extends Component {
 
   render() {
     return (
-      <Container>
-          <div className="container">
-                <img src={this.state.userList.avatar} onClick={this.userHandler} alt=""/>
-              <h1>{this.state.userList.first_name} {this.state.userList.last_name}</h1>
-              <p>Email: {this.state.userList.email}</p>
-          </div>
-      </Container>
+      <BodyContainer>
+        <Container>
+            <div className="container">
+                  <img src={this.state.userList.avatar} alt=""/>
+                <h1>{this.state.userList.first_name} {this.state.userList.last_name}</h1>
+                <p>Email: {this.state.userList.email}</p>
+            </div>
+        </Container>
+      </BodyContainer>
     );
   }
 }

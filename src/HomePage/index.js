@@ -54,15 +54,13 @@ class HomePage extends Component {
         })
         .catch(error => this.setState({ error, isLoading: false }));
     }
-
+    //we can use redux to store ID from first api call and keep updating onclick image, am just doing like I am 
+    //assigned ID as 1 for second api.
     render() {
       const { isLoading, users } = this.state;
         return (
             <Container>
                 <h2>USERS</h2>
-                {/* <select
-                    options={filterOption}
-                /> */}
                 <Autocomplete
                     className="sort"
                     options={filterOption}
@@ -71,13 +69,12 @@ class HomePage extends Component {
                         <TextField {...params} label="Filter" variant="outlined" maxWidth />
                       )}
                 />
-              <div className="chessboard">
+              <div className="griddiv">
                   {!isLoading ? (
                     users.map(user => {
                       const { name, image } = user;
                       return (
-                        <div className="chessdiv" key={name}>
-                          {/* <p>{name}</p> */}
+                        <div key={name}>
                           <div className="grid">
                             <div className="image">
                             <img src={image} onClick={this.handleImageClick} alt={name} />
@@ -97,7 +94,6 @@ class HomePage extends Component {
                 </div>
                 )}
               </div>
-              {/* <UserDetail /> */}
             </Container>
         );
     }
