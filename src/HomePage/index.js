@@ -77,7 +77,7 @@ class HomePage extends Component {
                         <div key={name}>
                           <div className="grid">
                             <div className="image">
-                            <img src={image} onClick={this.handleImageClick} alt={name} />
+                            <img src={image} handleImageClick={this.handleImageClick} alt={name} />
                             <p>{name}</p>
                             {this.state.displayUser && <UserDetail />}
                             </div>
